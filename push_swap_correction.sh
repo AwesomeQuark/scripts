@@ -8,7 +8,7 @@ FILES="trace"
 TESTS="$FILES/tests"
 
 ############ PRELUDE ############
-mkdir -p $FILES
+mkdir $FILES
 rm -rf $FILES/*
 clear
 echo "=================\033[1m CONOEL's $PROJECT correction script\033[0m ================="
@@ -56,9 +56,11 @@ fi
 ############### STEP2 ############ 
 echo "\n=====================| \033[1mSTEP 2: NORM \033[0m|===================== "
 
-#INPUTS
+
+DIR="/tmp/push_swap"#INPUTS
+touch $FILES/norme
 norminette $DIR/$SRC | grep Error | cut -d':' -f2 > "$FILES/norme"
-NB_ERROR=`cat $FILES/norme | wc -l | cut -d" " -f8`
+NB_ERROR=`cat "$FILES/norme" | wc -l | cut -d" " -f8`
 
 #VERIFICATION
 if [ "$NB_ERROR" != "0" ]
@@ -79,7 +81,7 @@ make -C $DIR -s > "$FILES/makefile"
 RELINK=`make -C $DIR -s`
 
 #VERIFICATION
-if [ "$RELINK" != "" ]
+if [ "$RELINK" != "make: Nothing to be done for `all\'.\n" ]
 then
 	echo "                    \033[31m/!\\ Make relink /!\\ \033[0m"
 	echo "\033[33m\c"
@@ -94,10 +96,13 @@ fi
 echo "\n===============| \033[1mSTEP 3: BAD BAD INPUTS... \033[0m|============== "
 
 #INPUTS
-mv $DIR/$PROJECT .
-mkdir -p "$FILE/$TESTS"
-mkdir -p "$FILE/$TESTS/verif"
-mkdir -p "$FILE/$TESTS/you"
+mv "$DIR/$PROJECT" .
+mkdir "$FILE/$TESTS"
+chmod 777 "$DIR/$TESTS"
+mkdir "$FILE/$TESTS/verif"
+chmod 777 "$DIR/$TESTS/verif"
+mkdir "$FILE/$TESTS/you"
+chmod 777 "$DIR/$TESTS/you"
 ./$PROJECT > "$FILES/$TESTS/you/01"
 echo "No arguments" > "$FILES/test/verif/01msg"
 ./$PROJECT "" > "$FILES/$TESTS/you/02"
