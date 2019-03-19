@@ -1,1 +1,77 @@
- function get_next_line has 30 lines
+ global scope bad aligned
+ has double inclusion protection but not with the good define name
+ file must end with a single empty line
+ spaces at the end of line
+ multiple empty lines
+ space after pointer
+ file must end with a single empty line
+ no newline after block
+ 42 header not well formatted
+ line has 82 characters
+ file must end with a single empty line
+ Space before function name
+ no newline after block
+ declarations in ft_memchr are bad aligned
+ 42 header not well formatted
+ line has 82 characters
+ 42 header not well formatted
+ line has 82 characters
+ 42 header not well formatted
+ line has 82 characters
+ 42 header not well formatted
+ line has 82 characters
+ declarations in ft_strjoin are bad aligned
+ bad spacing
+ declarations must be followed by one empty line in get_nb_word
+ spaces at the end of line
+ file must end with a single empty line
+ function ft_strtoll has 28 lines
+ line has 108 characters
+ no newline after block
+ file must end with a single empty line
+ missing space after break
+ no newline after block
+ file must end with a single empty line
+ no newline after block
+ global scope bad aligned
+ has double inclusion protection but not with the good define name
+ file must end with a single empty line
+ file must end with a single empty line
+ no newline after block
+ file must end with a single empty line
+ missing space after return
+ missing space after return
+ no newline after block
+ file must end with a single empty line
+ multiple empty lines
+ bad spacing before msg_
+ no newline after block
+ global scope bad aligned
+ file must end with a single empty line
+ missing space after return
+ line has 112 characters
+ declarations must be followed by one empty line in main
+ spaces at the end of line
+ missing space after return
+ C++ comment
+ no newline after block
+ global scope bad aligned
+ C++ comment
+ file must end with a single empty line
+ declarations must be followed by one empty line in free_nodes
+ no newline after block
+ file must end with a single empty line
+ missing space after break
+ function load_links has 27 lines
+ missing space after return
+ no newline after block
+ file must end with a single empty line
+ file must end with a single empty line
+ missing space after return
+ missing space after return
+ no newline after block
+ missing space after return
+ missing space after return
+ bad indentation
+ If is not on the same line that else
+ bad indentation
