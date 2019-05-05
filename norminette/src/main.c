@@ -6,7 +6,7 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 15:34:59 by conoel            #+#    #+#             */
-/*   Updated: 2019/04/09 15:36:32 by conoel           ###   ########.fr       */
+/*   Updated: 2019/04/09 17:39:34 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,11 @@ int		main(int argc, char **argv)
 	}
 	fd = open(argv[1], O_RDONLY);
 	head = lexer(fd);
+	head = head->next;
+	while (head != NULL)
+	{
+		printf("[\"%s\033[0m\"(%u)]  ", head->content, head->type);
+		head = head->next;
+	}
 	malloc_garbage(0);
 }

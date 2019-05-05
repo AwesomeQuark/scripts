@@ -6,7 +6,7 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 17:14:29 by conoel            #+#    #+#             */
-/*   Updated: 2019/04/09 17:21:51 by conoel           ###   ########.fr       */
+/*   Updated: 2019/04/09 21:18:12 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,8 @@ typedef struct s_token
 	t_token_type	type;
 }				t_token;
 
-t_token		* lexer(int fd);
-int			add_token(char *content, size_t size, t_token_type type, t_token *head);
+t_token			*lexer(int fd);
+int				add_token(char *content, size_t size, t_token_type type, t_token *head);
+t_token_type	misc_type(char *str, size_t size);
 
 #endif

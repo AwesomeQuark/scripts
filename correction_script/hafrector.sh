@@ -22,13 +22,13 @@ fi
 mkdir trace
 read -p "Press a key to begin, if you are brave enought !" -n 1 -s
 print_header
-read -p "Wich pRoJeCt do you want me to evaluate : " PROJECT
-if [ "$PROJECT" == "" ]
-then
-	echo "\033[31mYou have to type something dumbass...\033[0m"
-	exit
-fi
-read -p "Project path : " DIR
+#read -p "Wich pRoJeCt do you want me to evaluate : " PROJECT
+#if [ "$PROJECT" == "" ]
+#then
+#	echo "\033[31mYou have to type something dumbass...\033[0m"
+#	exit
+#fi
+read -ep "Project path : " DIR
 if [ ! -e "$DIR" ] || [ ! -d "$DIR" ] || [ "$DIR" == "" ]
 then
 	echo "\033[31mYour path does not exist or isn't a directory \033[0m[$DIR]"
@@ -46,7 +46,7 @@ print_header
 
 
 
-############## STEP1 ############
+############# STEP1 ############
 #              AUTHOR           #
 sh general/1-author.sh $DIR $LOGIN
 

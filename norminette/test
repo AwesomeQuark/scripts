@@ -1,5 +1,0 @@
-for (int index = 0; index < 5; index ++)
-{
-	if (index == 3)
-		return (index);
-}

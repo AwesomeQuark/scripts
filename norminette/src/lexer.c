@@ -6,7 +6,7 @@
 /*   By: conoel <conoel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/09 15:52:03 by conoel            #+#    #+#             */
-/*   Updated: 2019/04/09 17:12:03 by conoel           ###   ########.fr       */
+/*   Updated: 2019/04/09 17:38:43 by conoel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,8 +103,9 @@ int				lexer_main_loop(char *file, t_token *head)
 			file++;
 			continue ;
 		}
-		if (last_token_found != file)
-			add_token(last_token_found, file - last_token_found, MISC_STRING, head);
+		if (last_token_found != file && head->next != NULL)
+			add_token(last_token_found, file - last_token_found,
+				misc_type(last_token_found, file - last_token_found), head);
 		file += current->size;
 		last_token_found = file;
 		if (!(add_token(current->content, current->size, current->type, head)))
@@ -131,11 +132,5 @@ t_token			*lexer(int fd)
 	head->size = 0;
 	head->content = NULL;
 	lexer_main_loop(file, head);
-	head = head->next;
-	while (head != NULL)
-	{
-		printf("[\"\033[31m%s\033[0m\"(%u)]  ", head->content, head->type);
-		head = head->next;
-	}
 	return (head);
 }

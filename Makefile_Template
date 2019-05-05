@@ -6,7 +6,7 @@
 #    By: conoel <conoel@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/10 21:14:13 by conoel            #+#    #+#              #
-#    Updated: 2019/03/19 17:38:49 by conoel           ###   ########.fr        #
+#    Updated: 2019/04/05 17:44:11 by conoel           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ DEPENDENCY = libft.a
 
 ########## GENERALS ##########
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re $(LIB)
 
 all: $(LIB) $(OBJDIR) $(NAME)
 
