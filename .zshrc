@@ -1,0 +1,7 @@
+alias poule="git pull"
+alias gp="git pull"
+alias ga="git add ."
+alias gc="git commit -m"
+alias gp="git push"
+alias norme="sh ~/Documents/scripts/.norme.sh"
+alias cloneP="sh ~/Documents/scripts/.cloneP.sh"

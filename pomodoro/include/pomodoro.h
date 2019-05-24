@@ -13,8 +13,8 @@
 #define DEFAULT_PAUSE_DURATION 5*60
 #define DEFAULT_MAX_TOURS 3
 
-#define DEFAULT_WORK_MESSAGE "Get to work now !"
-#define DEFAULT_PAUSE_MESSAGE "Now you can rest lil beast"
+#define DEFAULT_WORK_MESSAGE "\033[32mGet to work now !\033[0m"
+#define DEFAULT_PAUSE_MESSAGE "\033[32mNow you can rest lil beast\033[0m"
 
 typedef enum	e_phase
 {
