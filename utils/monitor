@@ -1,0 +1,33 @@
+if [ -z "$1" ] || [ ! -z "$2" -a "$2" != "-r" ] 
+then
+	echo "Usage: monitor interface [-r]"
+	echo "	-r : Switch back to managed mode"
+	echo
+	echo "Monitor is a script to turn a wifi interface to monitor mode"
+	exit
+fi	
+
+mode="monitor"
+
+if [ "$2" = "-r" ]
+then
+	mode="managed"
+fi
+
+echo "Switching $1 to $mode mode..."
+ifconfig $1 down 2>> /tmp/monitor.log
+iwconfig $1 mode $mode 2>> /tmp/monitor.log
+ifconfig $1 up 2>> /tmp/monitor.log
+
+errors=$(cat /tmp/monitor.log)
+final_mode=$(iwconfig $1)
+
+if [ ! -z "$errors" ] || [ -z "$(echo $final_mode | grep -i $mode)" ]
+then
+	echo "Failure :" $errors
+	echo $final_mode
+else
+	echo "Success"
+fi
+
+rm /tmp/monitor.log

@@ -1,0 +1,16 @@
+#! /bin/sh
+
+if [ "$1" = "-h" ]
+then
+	echo "Usage: exe_file commande [usleep arg]"
+	exit
+fi
+
+while [ 1 ]
+do
+	$1
+	if [ ! -z $2 ]
+	then
+		usleep $2
+	fi
+done

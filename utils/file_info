@@ -1,0 +1,9 @@
+#! /bin/sh
+
+
+ls -la $1 | cut -d"/" -f1
+echo
+echo "##CONTENT##"
+cat -e $1 | head
+echo "####EOF####"
+echo $1
