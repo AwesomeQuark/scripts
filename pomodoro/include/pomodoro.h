@@ -7,6 +7,7 @@
 #include <time.h>
 #include <signal.h>
 #include <term.h>
+#include <string.h>
 #include <strings.h>
 
 #define DEFAULT_WORK_DURATION 25*60
